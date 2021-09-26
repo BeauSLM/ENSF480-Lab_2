@@ -1,3 +1,15 @@
+/* TODO:
+ * overload >=
+ * overload <<
+ * overload <=
+ * overload !=
+ * overload >
+ * overload <
+ * overload ==
+ * overload [] (subscript operator)
+ *
+ */
+
 /* File: mystring_B.h
  *
  *
@@ -34,6 +46,9 @@ public:
   // REQUIRES: rhs is reference to a Mystring as a source
   // PROMISES: to make this-object (object that this is pointing to, as  a copy 
   //           of rhs.
+
+  char operator [](int index);
+  // REQUIRES
 
   int length() const;
   // PROMISES: Return value is number of chars in charsM.

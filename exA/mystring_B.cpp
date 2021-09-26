@@ -1,3 +1,15 @@
+/* TODO:
+ * overload >=
+ * overload <<
+ * overload <=
+ * overload !=
+ * overload >
+ * overload <
+ * overload ==
+ * overload [] (subscript operator)
+ *
+ */
+
 /*  mystring_B.cpp
  *
  *
