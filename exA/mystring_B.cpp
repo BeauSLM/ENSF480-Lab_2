@@ -1,21 +1,11 @@
-/* TODO:
- * overload >=
- * overload <<
- * overload <=
- * overload !=
- * overload >
- * overload <
- * overload ==
- * overload [] (subscript operator)
- *
- */
-
 /*  mystring_B.cpp
  *
  *
  */
 // ENSF 480 - Lab 2 - Exercise A
 #include "mystring_B.h"
+#include <cassert>
+#include <cstddef>
 #include <string.h>
 #include <iostream>
 using namespace std;
@@ -163,13 +153,36 @@ void Mystring::memory_check(char* s)
     }
 }
 
+ostream& operator << (ostream& os, const Mystring& myString) {
+    os << myString.charsM;
+    return os;
+}
 
+bool operator==(const Mystring& lhs, const Mystring &rhs) {
+    return lhs.isEqual(rhs);
+}
 
+bool operator!=(const Mystring& lhs, const Mystring &rhs) {
+    return lhs.isNotEqual(rhs);
+}
 
+bool operator < (const Mystring& lhs, const Mystring &rhs) {
+    return lhs.isLessThan(rhs);
+}
 
+bool operator > (const Mystring& lhs, const Mystring &rhs) {
+    return lhs.isGreaterThan(rhs);
+}
 
+bool operator<=(const Mystring& lhs, const Mystring &rhs) {
+    return !lhs.isGreaterThan(rhs);
+}
 
+bool operator>=(const Mystring& lhs, const Mystring &rhs) {
+    return !lhs.isLessThan(rhs);
+}
 
-
-
-
+char& Mystring::operator[](const size_t index) const {
+    assert(index >= 0 && index < length());
+    return charsM[index];
+}

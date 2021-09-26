@@ -1,12 +1,5 @@
 /* TODO:
- * overload >=
- * overload <<
- * overload <=
- * overload !=
- * overload >
- * overload <
- * overload ==
- * overload [] (subscript operator)
+ * Document overloaded operators
  *
  */
 
@@ -47,8 +40,10 @@ public:
   // PROMISES: to make this-object (object that this is pointing to, as  a copy 
   //           of rhs.
 
-  char operator [](int index);
-  // REQUIRES
+  char& operator[](const size_t index) const;
+  // REQUIRES: pos >= 0 && pos < length()
+  // PROMISES: 
+  // Return value is the char at position index
 
   int length() const;
   // PROMISES: Return value is number of chars in charsM.
@@ -103,6 +98,35 @@ public:
   char* charsM; // a pointer to the beginning of an array of characters, allocated dynamically.
   void memory_check(char* s);
   // PROMISES: if s points to NULL terminates the program.
+  //
+  friend ostream& operator << (ostream&, const Mystring&);
+
+  friend bool operator == (const Mystring& lhs, const Mystring& rhs);
+  // REQUIRES: lhs, rhs are references to valid Mystring objects
+  // PROMISES: returns 1 if lhs.charsM and rhs.charsM
+  // are the same, 0 otherwise
+
+  friend bool operator != (const Mystring& lhs, const Mystring& rhs);
+  // REQUIRES: lhs, rhs are references to valid Mystring objects
+  // PROMISES: returns 0 if lhs.charsM and rhs.charsM
+  // are the same, 1 otherwise
+
+  friend bool operator < (const Mystring& lhs, const Mystring& rhs);
+  // REQUIRES: lhs, rhs are references to valid Mystring objects
+  // TODO: promises?
+
+  friend bool operator > (const Mystring& lhs, const Mystring& rhs);
+  // REQUIRES: lhs, rhs are references to valid Mystring objects
+  // TODO: promises?
+
+  friend bool operator >= (const Mystring& lhs, const Mystring& rhs);
+  // REQUIRES: lhs, rhs are references to valid Mystring objects
+  // TODO: promises?
+
+  friend bool operator <= (const Mystring& lhs, const Mystring& rhs);
+  // REQUIRES: lhs, rhs are references to valid Mystring objects
+  // TODO: promises?
+
 };
 #endif
 

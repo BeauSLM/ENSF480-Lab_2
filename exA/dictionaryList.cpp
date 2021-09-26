@@ -1,3 +1,7 @@
+/* TODO:
+ *
+ */
+
 // lookuptable.cpp
 
 // ENSF 480 - Lab 2 - Exercise A
@@ -5,7 +9,9 @@
 // Completed by:
 
 #include <assert.h>
+#include <cstddef>
 #include <iostream>
+#include <ostream>
 #include <stdlib.h>
 #include "dictionaryList.h"
 #include "mystring_B.h"
@@ -15,6 +21,16 @@ using namespace std;
 Node::Node(const Key& keyA, const Datum& datumA, Node *nextA)
   : keyM(keyA), datumM(datumA), nextM(nextA)
 {
+}
+
+char& Node::operator[](size_t index) const {
+    assert(index >= 0 && index < datumM.length());
+    return datumM[index];
+}
+
+ostream& operator<<(ostream& os, const Node& node) {
+    os << node.datumM.c_str();
+    return os;
 }
 
 DictionaryList::DictionaryList()
@@ -219,4 +235,22 @@ void DictionaryList::copy(const DictionaryList& source)
     }
 
     assert(sizeM == source.size());
+}
+
+Node& DictionaryList::operator[](const size_t index) const {
+    assert(index >= 0 && index < size());
+
+    Node *temp = headM;
+    for (size_t i = 0; i < index; i++)
+        temp = temp->nextM;
+
+    return *temp;
+}
+
+ostream& operator<<(ostream& os, const DictionaryList& dictionaryList) {
+    // TODO: handle the case that size() is 0?
+    for (size_t i = 0; i < dictionaryList.size(); i++)
+        os << dictionaryList[i] << endl;
+
+    return os;
 }

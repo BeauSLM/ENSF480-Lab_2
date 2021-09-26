@@ -4,6 +4,7 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 #include <iostream>
+#include <ostream>
 using namespace std;
 
 // class DictionaryList: GENERAL CONCEPTS
@@ -21,7 +22,7 @@ using namespace std;
 #include "mystring_B.h"
 
 // Edit these typedefs to change the key or datum types, if necessary.
-typedef int Key; 
+typedef int Key;
 typedef Mystring Datum;
 
 // THE NODE TYPE
@@ -32,39 +33,46 @@ typedef Mystring Datum;
 
 class Node {
   friend class DictionaryList;
+  friend ostream& operator<<(ostream&, const Node&);
+
 private:
   Key keyM;
   Datum datumM;
   Node *nextM;
 
   // This ctor should be convenient in insert and copy operations.
-  Node(const Key& keyA, const Datum& datumA, Node *nextA);
+  Node(const Key &keyA, const Datum &datumA, Node *nextA);
+public:
+  char& operator[](const size_t index) const;
 };
 
 class DictionaryList {
+  friend ostream& operator<<(ostream &, const DictionaryList &);
+
 public:
   DictionaryList();
-  DictionaryList(const DictionaryList& source);
-  DictionaryList& operator =(const DictionaryList& rhs);
+  DictionaryList(const DictionaryList &source);
+  DictionaryList &operator=(const DictionaryList &rhs);
+  Node& operator[](const size_t i) const;
   ~DictionaryList();
 
   int size() const;
   // PROMISES: Returns number of keys in the table.
 
   int cursor_ok() const;
-  // PROMISES: 
+  // PROMISES:
   //   Returns 1 if the cursor is attached to a key/datum pair,
   //   and 0 if the cursor is in the off-list state.
 
-  const Key& cursor_key() const;
+  const Key &cursor_key() const;
   // REQUIRES: cursor_ok()
   // PROMISES: Returns key of key/datum pair to which cursor is attached.
 
-  const Datum& cursor_datum() const;
+  const Datum &cursor_datum() const;
   // REQUIRES: cursor_ok()
   // PROMISES: Returns datum of key/datum pair to which cursor is attached.
 
-  void insert(const Key& keyA, const Datum& datumA);
+  void insert(const Key &keyA, const Datum &datumA);
   // PROMISES:
   //   If keyA matches a key in the table, the datum for that
   //   key is set equal to datumA.
@@ -72,14 +80,14 @@ public:
   //   used to create a new key/datum pair in the table.
   //   In either case, the cursor goes to the off-list state.
 
-  void remove(const Key& keyA);
+  void remove(const Key &keyA);
   // PROMISES:
   //   If keyA matches a key in the table, the corresponding
   //   key/datum pair is removed from the table.
   //   If keyA does not match an existing key, the table is unchanged.
   //   In either case, the cursor goes to the off-list state.
 
-  void find(const Key& keyA);
+  void find(const Key &keyA);
   // PROMISES:
   //   If keyA matches a key in the table, the cursor is attached
   //   to the corresponding key/datum pair.
@@ -92,7 +100,7 @@ public:
 
   void step_fwd();
   // REQUIRES: cursor_ok()
-  // PROMISES: 
+  // PROMISES:
   //   If cursor is at the last key/datum pair in the list, cursor
   //   goes to the off-list state.
   //   Otherwise the cursor moves forward from one pair to the next.
@@ -107,29 +115,10 @@ private:
 
   void destroy();
   // Deallocate all nodes, set headM to zero.
-  
-  void copy(const DictionaryList& source);
+
+  void copy(const DictionaryList &source);
   // Establishes *this as a copy of source.  Cursor of *this will
   // point to the twin of whatever the source's cursor points to.
-
 };
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
