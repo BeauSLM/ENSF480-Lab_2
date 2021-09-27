@@ -1,16 +1,22 @@
+// TODO: Documentation!
+#ifndef SHAPE_H
+#define SHAPE_H
+#include_next <string.h>
 #include "Point.h"
 class Shape {
-    private:
+    protected:
         Point origin;
         char *shapeName; // dynamically allocated by the constructor
     public:
-        Shape(Point origin, char *shapeName):
-            origin(origin), shapeName(shapeName) {};
+        Shape(Point origin, char *shapeName);
         ~Shape() { delete [] shapeName; }
-        const Point& getOrigin() const;
+
+        const Point& getOrigin() const { return origin; }
         char *getName() const { return shapeName; }
-        void display() const;
-        double distance(Shape& other);
+
+        virtual void display() const; // virtual? if so, provide definition for this class (see slide 25)
+        double distance(Shape& other) const;
         static double distance(Shape& the_shape, Shape& other);
         void move(double dx, double dy);
 };
+#endif
