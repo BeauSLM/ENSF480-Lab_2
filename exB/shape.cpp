@@ -3,9 +3,10 @@
 #include "shape.h"
 using namespace std;
 
-Shape::Shape(Point origin, char *shapeName):
-    origin(origin), shapeName(new char[strlen(shapeName) + 1]) {
-        strcpy(this->shapeName, shapeName);
+Shape::Shape(const Point origin, const char *shapeName) :
+    origin(origin), shapeName(new char[strlen(shapeName) + 1])
+{
+    strcpy(this->shapeName, shapeName);
 }
 
 void Shape::display() const {

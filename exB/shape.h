@@ -1,14 +1,14 @@
 // TODO: Documentation!
 #ifndef SHAPE_H
 #define SHAPE_H
-#include_next <string.h>
+#include <string.h>
 #include "point.h"
 class Shape {
     protected:
         Point origin;
         char *shapeName; // dynamically allocated by the constructor
     public:
-        Shape(Point origin, char *shapeName);
+        Shape(const Point origin, const char *shapeName);
         ~Shape() { delete [] shapeName; }
 
         const Point& getOrigin() const { return origin; }
