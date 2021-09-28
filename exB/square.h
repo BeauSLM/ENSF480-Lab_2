@@ -2,7 +2,7 @@
 // TODO: get and set as needed
 #ifndef SQUARE_H
 #define SQUARE_H
-#include "Shape.h"
+#include "shape.h"
 class Square : Shape {
     protected:
         double side_a;

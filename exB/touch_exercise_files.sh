@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CLASSES="Point,Shape,Rectangle,Square,GraphicsWorld"
+CLASSES="point,shape,rectangle,square,graphicsworld"
 
 for class in $(echo $CLASSES | sed "s/,/ /g")
 do

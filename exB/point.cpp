@@ -5,7 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-#include "Point.h"
+#include "point.h"
 using namespace std;
 
 void Point::display() const {

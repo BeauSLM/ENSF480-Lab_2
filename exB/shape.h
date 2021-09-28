@@ -2,7 +2,7 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 #include_next <string.h>
-#include "Point.h"
+#include "point.h"
 class Shape {
     protected:
         Point origin;

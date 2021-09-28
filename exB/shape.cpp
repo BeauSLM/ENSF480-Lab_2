@@ -1,6 +1,6 @@
 #include <iomanip>
 #include <iostream>
-#include "Shape.h"
+#include "shape.h"
 using namespace std;
 
 Shape::Shape(Point origin, char *shapeName):
