@@ -10,6 +10,8 @@ class Point {
     public:
         Point(double x, double y):
             x(x), y(y) {} // TODO: initialize id (how?)
+        void setX(const double x) { this->x = x; }
+        void setY(const double y) { this->y = y; }
         double getX() const { return x; }
         double getY() const { return y; }
 
