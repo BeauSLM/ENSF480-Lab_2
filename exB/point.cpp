@@ -1,12 +1,6 @@
-// TODO: i think we may need to make a separate function
-// to print doubles in the format #####.## as specified
-// in the assignment
-
-#include <iostream>
-#include <iomanip>
-#include <cmath>
 #include "point.h"
-using namespace std;
+
+int Point::pointCount = 0;
 
 void Point::display() const {
     cout << fixed << "X-coordinate: " << setw(8) << setprecision(2) << x << endl;

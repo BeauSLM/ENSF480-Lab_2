@@ -5,18 +5,19 @@
 #include <iostream>
 using namespace std;
 
-class Rectangle : Square {
+class Rectangle : public Square {
     private:
         double side_b;
 
     public:
         Rectangle(const double x, const double y, const double side_a, const double side_b, const char* shapeName);
-        double area() const;
-        double perimeter() const;
-        void display() const;
+        double area() const { return side_a * side_b; }
+        double perimeter() const { return 2 * (side_a + side_b); }
 
-        double getSide_b() { return side_b; }
-        void setSide_b(double side_b) { this->side_b = side_b; }
+        double get_side_b() { return side_b; }
+        void set_side_b(double side_b) { this->side_b = side_b; }
+
+        void display() const;
         
 };
 

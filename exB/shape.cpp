@@ -1,14 +1,18 @@
-#include <iomanip>
-#include <iostream>
 #include "shape.h"
-using namespace std;
 
+//constructor
 Shape::Shape(const Point origin, const char *shapeName) :
     origin(origin), shapeName(new char[strlen(shapeName) + 1])
 {
     strcpy(this->shapeName, shapeName);
 }
 
+//destructor
+Shape::~Shape() {
+    delete [] shapeName;
+}
+
+//displays the shape name and coordinates of its origin
 void Shape::display() const {
     cout << "Shape Name: " << shapeName << endl;
     origin.display();

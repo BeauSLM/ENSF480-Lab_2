@@ -5,3 +5,11 @@ Square::Square(const double x, const double y, const double side_a, const char* 
 {
     this->side_a = side_a;
 }
+
+void Square::display() const {
+    cout << "Square Name: " << getName() << endl;
+    origin.display();
+    cout << "Side a: " << side_a << endl;
+    cout << "Area: " << area() << endl;
+    cout << "Perimeter: " << perimeter() << endl; 
+}
