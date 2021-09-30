@@ -12,6 +12,9 @@ class Square : public Shape {
         double side_a;
     public:
         Square(const double x, const double y, const double side_a, const char* shapeName);
+        Square& operator=(const Square& s);
+        Square(const Square& s);
+        virtual ~Square() {;}
         double get_side_a() const { return side_a; }
         void set_side_a(double side_a) { this->side_a = side_a; }
 

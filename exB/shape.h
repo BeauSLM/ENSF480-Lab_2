@@ -13,7 +13,9 @@ class Shape {
 
     public:
         Shape(const Point origin, const char *shapeName);
-        ~Shape() { delete [] shapeName; }
+        virtual ~Shape() { delete [] shapeName; }
+        Shape& operator=(const Shape& s);
+        Shape(const Shape& s);
 
         const Point& getOrigin() const { return origin; } //point returned cannot be modified
         char* getName() const { return shapeName; }

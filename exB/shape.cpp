@@ -12,6 +12,24 @@ Shape::~Shape() {
     delete [] shapeName;
 }
 
+//assignment operator
+Shape& Shape::operator=(const Shape& s) {
+    if(this != &s) {
+        origin = Point(s.getOrigin().getX(), s.getOrigin().getY());
+        shapeName = new char[strlen(s.getName() + 1)];
+        strcpy(shapeName, s.getName());
+    }
+    return *this;
+}
+
+//copy constructor
+Shape::Shape(const Shape& s) : 
+    origin(Point(s.getOrigin().getX(), s.getOrigin().getY())) 
+{
+    shapeName = new char[strlen(s.getName() + 1)];
+    strcpy(shapeName, s.getName());
+}
+
 //displays the shape name and coordinates of its origin
 void Shape::display() const {
     cout << "Shape Name: " << shapeName << endl;
