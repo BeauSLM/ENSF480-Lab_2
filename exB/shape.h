@@ -15,17 +15,36 @@ class Shape {
     public:
         //constructor + big 3
         Shape(const Point origin, const char *shapeName); //constructor
-        virtual ~Shape() { delete [] shapeName; } //destructor that frees shapeName
+        // REQUIRES: shapeName points to the first character of a c-string
+        // PROMISES: initializes members of shape to the passed in values
+
+        virtual ~Shape() { delete [] shapeName; }
+        // PROMISES: frees shapeName
+
         Shape& operator=(const Shape& s); //assignment operator
+        // REQUIRES: s is a reference to a shape object
+        // PROMISES: make this object a copy of s, freeing memory as necessary, freeing memory as necessary
+
         Shape(const Shape& s); //copy constructor
+        // REQUIRES: s is a reference to a shape object
+        // PROMISES: construct a copy of s, allocating memory as necessary
 
-        //getters
-        const Point& getOrigin() const { return origin; } //point returned cannot be modified
+        const Point& getOrigin() const { return origin; }
+        // PROMISES: returns an immutable reference to the origin of the shape
+
         char* getName() const { return shapeName; }
+        // PROMISES: returns a pointer to the shapeName
 
-        virtual void display() const; //displays the shape name and origin coordinates
-        double distance(Shape& other) const; //calculates the distance between this shape and another
-        static double distance(Shape& the_shape, Shape& other); //calculates the distance between any 2 shapes
-        void move(double dx, double dy); //moves the shape's originchri
+        virtual void display() const;
+        // PROMISES: displays the shape name and origin coordinates
+
+        double distance(Shape& other) const;
+        // PROMISES: returns the distance between this shape and another
+
+        static double distance(Shape& the_shape, Shape& other);
+        // PROMISES: returns the distance between any 2 shapes
+
+        void move(double dx, double dy);
+        // PROMISES: Sets shape's origin to the passed in coordinates
 };
 #endif

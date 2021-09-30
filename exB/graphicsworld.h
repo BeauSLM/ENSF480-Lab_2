@@ -5,5 +5,6 @@
 class GraphicsWorld {
     public:
         static void run();
+        // PROMISES: a main function testing our classes
 };
 #endif

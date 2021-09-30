@@ -16,26 +16,40 @@ class Point {
         int id; //each point object has a unique id, starting at 1001
         friend class Shape;
     public:
-        //constructor that also increments the point count
+        // TODO: how to make pointCount start at 0?
         Point(double x, double y) : x(x), y(y) {
             pointCount++;
             id = pointCount + 1000;
         }
-        //destructor that decrements the point count
+        // PROMISES: increments pointCount
+        // PROMISES: sets id to 1000 + pointCount
+
         ~Point() { pointCount--; }
+        // PROMISES: decrements the point count
 
         //getters and setters
         void setX(const double x) { this->x = x; }
-        void setY(const double y) { this->y = y; }
-        double getX() const { return x; }
-        double getY() const { return y; }
-        static int counter() { return pointCount; }
+        // PROMISES: sets x to the passed in value
 
-        //displays the x and y coord
+        void setY(const double y) { this->y = y; }
+        // PROMISES: sets y to the passed in value
+
+        double getX() const { return x; }
+        // PROMISES: returns x
+
+        double getY() const { return y; }
+        // PROMISES: returns y
+
+        static int counter() { return pointCount; }
+        // PROMISES: returns the total number of point objects in the program
+
         void display() const;
-        //returns the distance between any 2 points (static)
+        // PROMISES: displays the x and y coord
+        
         static double distance(const Point& the_point, const Point& other);
-        //returns the distance between this point and another
+        //PROMISES: returns the distance between any 2 points (static)
+
         double distance(const Point& other) const;
+        //PROMISES: returns the distance between this point and another
 };
 #endif
