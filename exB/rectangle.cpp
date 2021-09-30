@@ -8,7 +8,7 @@ Rectangle::Rectangle(const double x, const double y, const double side_a, const 
 
 Rectangle& Rectangle::operator=(const Rectangle& s) {
     if(this != &s) {
-        Shape::operator=(s);
+        Square::operator=(s);
         side_b = s.get_side_b();
     }
     return *this;

@@ -30,7 +30,7 @@ cout << "\nThe distance between m and n is again: "
  
 #if 1               // Change 0 to 1 to test Rectangle 
  
-cout << "\nTesting Functions in class Rectangle:"; 
+cout << "\nTesting Functions in class Rectangle:\n"; 
  
 Rectangle a(5, 7, 12, 15, "RECTANGLE A"); 
  
@@ -41,7 +41,7 @@ Rectangle b(16 , 7, 8, 9, "RECTANGLE B");
 b.display(); 
  
 double d = a.distance(b); 
-cout <<"\nDistance between square a, and b is: " << d << endl; 
+cout <<"Distance between square a, and b is: " << d << "\n" << endl; 
  
 Rectangle rec1 = a; 
  
@@ -54,12 +54,13 @@ rec2.display();
 rec2 = a; 
 a.set_side_b(200); 
 a.set_side_a(100); 
+
 cout << "\nExpected to display the following values for objec rec2: " << endl; 
 cout << "Rectangle Name: RECTANGLE A\n" << "X-coordinate: 5\n"  << "Y-coordinate: 7\n" 
          << "Side a: 12\n" << "Side b: 15\n" << "Area: 180\n" << "Perimeter: 54\n" ; 
 cout << "\nIf it doesn't there is a problem with your assignment operator.\n" << endl; 
 rec2.display(); 
-     
+
 cout << "\nTesting copy constructor in class Rectangle:" <<endl; 
 Rectangle rec3 (a); 
 rec3.display(); 
