@@ -1,7 +1,3 @@
-/* TODO:
- *
- */
-
 // lookuptable.cpp
 
 // ENSF 480 - Lab 2 - Exercise A
@@ -248,7 +244,6 @@ Node& DictionaryList::operator[](const size_t index) const {
 }
 
 ostream& operator<<(ostream& os, const DictionaryList& dictionaryList) {
-    // TODO: handle the case that size() is 0?
     for (size_t i = 0; i < dictionaryList.size(); i++)
         os << dictionaryList[i] << endl;
 
