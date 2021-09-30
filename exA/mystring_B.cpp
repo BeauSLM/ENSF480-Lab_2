@@ -1,7 +1,10 @@
-/*  mystring_B.cpp
- *
- *
+/*
+ * File Name: dictionaryList.cpp
+ * Assignment: Lab 2 Exercise A
+ * Completed By: Beau McCartney, Quentin Jennings
+ * Submission Date: September 30th, 2021
  */
+
 // ENSF 480 - Lab 2 - Exercise A
 #include "mystring_B.h"
 #include <cassert>

@@ -1,3 +1,11 @@
+/*
+ * File Name: dictionaryList.cpp
+ * Assignment: Lab 2 Exercise A
+ * Completed By: Beau McCartney, Quentin Jennings
+ * Submission Date: September 30th, 2021
+ */
+
+
 #include "point.h"
 #include "shape.h"
 #include "square.h"
@@ -6,6 +14,7 @@
 #include "iostream"
 using namespace std;
 
+//function modified from Lab 2 pdf https://d2l.ucalgary.ca/d2l/le/content/399720/viewContent/4905854/View
 void GraphicsWorld::run(){ 
 #if 1               // Change 0 to 1 to test Point 
  

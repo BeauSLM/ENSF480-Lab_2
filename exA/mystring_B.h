@@ -1,12 +1,10 @@
-/* TODO:
- * Document overloaded operators
- *
+/*
+ * File Name: dictionaryList.cpp
+ * Assignment: Lab 2 Exercise A
+ * Completed By: Beau McCartney, Quentin Jennings
+ * Submission Date: September 30th, 2021
  */
 
-/* File: mystring_B.h
- *
- *
- */
 // ENSF 480 - Lab 2 - Exercise A
 #include <iostream>
 #include <string>

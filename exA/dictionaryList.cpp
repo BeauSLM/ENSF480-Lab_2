@@ -2,7 +2,7 @@
 
 // ENSF 480 - Lab 2 - Exercise A
  
-// Completed by:
+// Completed by: Beau McCartney, Quentin jennings
 
 #include <assert.h>
 #include <cstddef>

@@ -1,3 +1,10 @@
+/*
+ * File Name: dictionaryList.cpp
+ * Assignment: Lab 2 Exercise A
+ * Completed By: Beau McCartney, Quentin Jennings
+ * Submission Date: September 30th, 2021
+ */
+
 #ifndef RECT_H
 #define RECT_H
 
