@@ -1,11 +1,13 @@
 #include "rectangle.h"
 
+//constructor
 Rectangle::Rectangle(const double x, const double y, const double side_a, const double side_b, 
     const char* shapeName) : Square(x, y, side_a, shapeName)
 {
     this->side_b = side_b;
 }
 
+//assignment operator
 Rectangle& Rectangle::operator=(const Rectangle& s) {
     if(this != &s) {
         Square::operator=(s);
@@ -14,6 +16,7 @@ Rectangle& Rectangle::operator=(const Rectangle& s) {
     return *this;
 }
 
+//copy constructor
 Rectangle::Rectangle(const Rectangle& s) : Square(s) {
     side_b = s.get_side_b();
 }

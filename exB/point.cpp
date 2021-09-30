@@ -1,6 +1,6 @@
 #include "point.h"
 
-int Point::pointCount = 0;
+int Point::pointCount = 0; //initializes the static point count
 
 void Point::display() const {
     cout << fixed << "X-coordinate: " << setw(8) << setprecision(2) << x << endl;
