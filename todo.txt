@@ -1,0 +1,19 @@
+TODO: 
+
+- Look over exA briefly, mainly make sure there's no memory leaks
+
+- Should shape be a virtual class?
+
+- Add multiline comments with the name of the files for all submitted files, in this format:
+
+/*
+ * File Name: dictionaryList.cpp
+ * Assignment: Lab 1 Exercise B
+ * Completed By: Beau McCartney, Apostolos Scondriannis
+ * Submission Date: September 24th, 2021
+ */
+
+- Paste c++ files into the report md (inside backticks like discord)
+
+- Make .zip file containing all source code to be zipped, place said file in 
+submission folder
