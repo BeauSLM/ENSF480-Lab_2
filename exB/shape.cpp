@@ -7,11 +7,6 @@ Shape::Shape(const Point origin, const char *shapeName) :
     strcpy(this->shapeName, shapeName);
 }
 
-//destructor
-Shape::~Shape() {
-    delete [] shapeName;
-}
-
 //assignment operator
 Shape& Shape::operator=(const Shape& s) {
     if(this != &s) {
