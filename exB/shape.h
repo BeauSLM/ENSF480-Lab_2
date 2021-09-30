@@ -18,7 +18,7 @@ class Shape {
         // REQUIRES: shapeName points to the first character of a c-string
         // PROMISES: initializes members of shape to the passed in values
 
-        virtual ~Shape() { delete [] shapeName; }
+        ~Shape() { delete [] shapeName; }
         // PROMISES: frees shapeName
 
         Shape& operator=(const Shape& s); //assignment operator

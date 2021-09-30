@@ -7,20 +7,6 @@ Rectangle::Rectangle(const double x, const double y, const double side_a, const 
     this->side_b = side_b;
 }
 
-//assignment operator
-Rectangle& Rectangle::operator=(const Rectangle& s) {
-    if(this != &s) {
-        Square::operator=(s);
-        side_b = s.get_side_b();
-    }
-    return *this;
-}
-
-//copy constructor
-Rectangle::Rectangle(const Rectangle& s) : Square(s) {
-    side_b = s.get_side_b();
-}
-
 void Rectangle::display() const {
     cout << "Rectangle Name: " << getName() << endl;
     origin.display();

@@ -18,18 +18,6 @@ class Rectangle : public Square {
         // REQUIRES: shapeName points to the first character of a c-string
         // PROMISES: initializes rectangle with the passed in values
 
-        // TODO: sanity check do we need this to be virtual in subclasses
-        virtual ~Rectangle() {;}
-        //virtual destructor is needed
-
-        Rectangle& operator=(const Rectangle& s); //assignment operator
-        // REQUIRES: s is a reference to a rectangle object
-        // PROMISES: make this object a copy of s, freeing memory as necessary
-
-        Rectangle(const Rectangle& s); //copy constructor
-        // REQUIRES: s is a reference to a rectangle object
-        // PROMISES: construct a copy of s, allocating memory as necessary
-
         double area() const { return side_a * side_b; }
         // PROMISES: returns area of rectangle
 

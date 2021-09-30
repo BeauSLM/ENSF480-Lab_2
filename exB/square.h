@@ -16,17 +16,6 @@ class Square : public Shape {
         // REQUIRES: shapeName points to the first character of a c-string
         // PROMISES: initializes members of square to the passed in values
 
-        Square& operator=(const Square& s); //assignment operator
-        // REQUIRES: s is a reference to a square object
-        // PROMISES: make this object a copy of s, freeing memory as necessary
-
-        Square(const Square& s); //copy constructor
-        // REQUIRES: s is a reference to a square object
-        // PROMISES: construct a copy of s, allocating memory as necessary
-
-        // TODO: sanity check do we need this to be virtual in subclasses
-        virtual ~Square() {;} //destructor - doesn't do anything but is needed 
-                              //to prevent unpredictable behavior
         //getters/setters
         double get_side_a() const { return side_a; } 
         // PROMISES: returns side_a

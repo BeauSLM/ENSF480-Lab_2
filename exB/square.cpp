@@ -7,20 +7,6 @@ Square::Square(const double x, const double y, const double side_a, const char* 
     this->side_a = side_a;
 }
 
-//assignment operator
-Square& Square::operator=(const Square& s) {
-    if(this != &s) {
-        Shape::operator=(s);
-        side_a = s.get_side_a();
-    }
-    return *this;
-}
-
-//copy constructor
-Square::Square(const Square& s) : Shape(s) {
-    side_a = s.get_side_a();
-}
-
 void Square::display() const {
     cout << "Square Name: " << getName() << endl;
     origin.display();
