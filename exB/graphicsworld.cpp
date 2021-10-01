@@ -1,5 +1,5 @@
 /*
- * File Name: dictionaryList.cpp
+ * File Name: graphicsworld.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021

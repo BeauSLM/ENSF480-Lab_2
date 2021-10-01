@@ -280,7 +280,7 @@ ostream& operator<<(ostream& os, const DictionaryList& dictionaryList) {
 
 
 /*
- * File Name: dictionaryList.cpp
+ * File Name: mystring_B.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -561,7 +561,7 @@ n
 #### Source code:
 ```c++
 /*
- * File Name: dictionaryList.cpp
+ * File Name: graphicsworld.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -657,8 +657,9 @@ sh [3]->display();
  
 #endif             // end of block to test array of pointer and polymorphism 
 }
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: graphicsworld.h
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -675,8 +676,9 @@ class GraphicsWorld {
         // PROMISES: a main function testing our classes
 };
 #endif
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: main.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -688,8 +690,9 @@ int main (int argc,char *argv[])
     GraphicsWorld::run();
     return 0;
 }
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: point.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -714,8 +717,9 @@ double Point::distance(const Point& the_point, const Point& other) {
 double Point::distance(const Point& other) const {
     return distance(*this, other);
 }
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: point.h
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -776,8 +780,9 @@ class Point {
         //PROMISES: returns the distance between this point and another
 };
 #endif
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: rectangle.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -800,8 +805,9 @@ void Rectangle::display() const {
     cout << "Area: " << area() << endl;
     cout << "Perimeter: " << perimeter() << endl; 
 }
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: rectangle.h
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -845,8 +851,9 @@ class Rectangle : public Square {
 };
 
 #endif
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: shape.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -897,8 +904,9 @@ void Shape::move(double dx, double dy) {
     origin.x += dx;
     origin.y += dy;
 }
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: shape.h
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -954,8 +962,9 @@ class Shape {
         // PROMISES: Sets shape's origin to the passed in coordinates
 };
 #endif
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: square.cpp
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
@@ -977,8 +986,9 @@ void Square::display() const {
     cout << "Area: " << area() << endl;
     cout << "Perimeter: " << perimeter() << endl; 
 }
+
 /*
- * File Name: dictionaryList.cpp
+ * File Name: square.h
  * Assignment: Lab 2 Exercise A
  * Completed By: Beau McCartney, Quentin Jennings
  * Submission Date: September 30th, 2021
