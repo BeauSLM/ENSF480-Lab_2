@@ -53,5 +53,10 @@ class Shape {
 
         void move(double dx, double dy);
         // PROMISES: Sets shape's origin to the passed in coordinates
+
+        virtual double area() const = 0;
+        // PROMISES: Returns the area of the shape
+        
+        virtual double perimeter() const = 0;
 };
 #endif

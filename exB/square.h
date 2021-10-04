@@ -29,13 +29,13 @@ class Square : public Shape {
         void set_side_a(double side_a) { this->side_a = side_a; }
         // PROMISES: sets side_a to passed in value
 
-        virtual double area() const { return side_a * side_a; }
+        double area() const { return side_a * side_a; }
         // PROMISES: returns the area of the square
 
-        virtual double perimeter() const { return 4 * side_a; }
+        double perimeter() const { return 4 * side_a; }
         // PROMISES: returns the perimeter of the square
 
-        virtual void display() const;
+        void display() const;
         // PROMISES: prints the square's name, x/y coords, side length, area and perimeter
 };
 #endif
